@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    My Website
+  </title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'> </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <form class="steps" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="">
+    <ul id="progressbar">
+      <li class="active">User Information</li>
+      <li>Drug House Information</li>
+      <li>License Information</li>
+      <li>Contact Person Details</li>
+    </ul>
+
+    <!-- USER INFORMATION FIELD SET -->
+    <fieldset>
+      <h2 class="fs-title">Supplier Registration Form</h2>
+      <h3 class="fs-subtitle">We just need some basic information to begin business with you</h3>
+      <!-- Begin What's Your Name Field -->
+      <div class="hs_name">
+        <label for="name">Name*</label>
+        <input id="name" name="name" required="required" type="text"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please include your name">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End What's Your Name Field -->
+      
+      <!-- Begin What's Your Email Field -->
+      <div class="hs_email">
+        
+        <label for="email">E-mail Address*</label>
+        
+        <input id="email" name="email" required="required" type="email"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid email address.">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End What's Your Email Field -->
+      
+      <!-- Begin Mobile Number in Your Database Field -->
+      <div class="hs_mobno">
+
+        <label
+        for="mobile_number">Mobile Number*</label>
+        
+        <input id="mobile_number" class="form-text hs-input"
+        name="mobile_number" required="required" size="60" maxlength="128"
+        type="number" value="" placeholder="" data-rule-required="true"
+          data-msg-required="Please enter a valid number">
+          <span class="error1" style="display: none;">
+            <i class="error-log fa fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        
+        <!-- End Mobile Number in Your Database Field -->
+        <!-- Begin What's Your Password Field -->
+        <div class="hs_password">
+          
+          <label for="password">Password*</label>
+          
+          <input id="password" name="password" required="required" onchange="check_pass();" type="password"
+          value="" placeholder="" data-rule-required="true" data-msg-required="Please enter your password">
+          <span class="error1" style="display: none;">
+            <i class="error-log fa fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <!-- End What's Your Password Field -->
+        <!-- Begin What's Your Confirm Password Field -->
+        <div class="hs_confirmpassword">
+          
+          <label for="confirm_password">Confirm Password*</label>
+          
+          <input id="comfirm_password" name="confirm_password" required="required" onchange="check_pass();" type="password"
+          value="" placeholder="" data-rule-required="true" data-msg-required="Password does not match">
+          <span class="error1" style="display: none;">
+            <i class="error-log fa fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <!-- End What's Your Confirm Password Field -->
+        <input type="button" id="next" data-page="1" name="next" class="next action-button" value="Next" />
+        <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><a href="#"
+          class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+      </div>
+    </fieldset>
+    
+    
+    
+    <!-- Shop Information FIELD SET -->
+    <fieldset>
+      <h2 class="fs-title">Your Drug House Information</h2>
+      <h3 class="fs-subtitle">Provide us details of your Drug House</h3>
+      <!-- Begin What's Your Role Field -->
+      <div class="hs_role">
+        
+        <label for="role">Role*</label>
+        
+        <input id="role" name="role" required="required" type="text"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please include your role">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End What's Your Role Field -->
+      
+      <!-- Begin What's Your Shop Name Field -->
+      <div class="hs_shop_name">
+        
+        <label for="shop_name">Shop-Name*</label>
+        
+        <input id="shop_name" name="shop_name" required="required" type="text"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid email address.">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+    </div>
+    <!-- End What's Your Shop Name Field -->
+
+    <!-- Begin Area in Your Database Field -->
+    <div class="hs_area">
+
+      <label
+        for="area">Area*</label>
+
+      <input id="area" class="form-text hs-input"
+        name="area" required="required" size="60" maxlength="128"
+        type="text" value="" placeholder="" data-rule-required="true"
+        data-msg-required="Please enter Area.">
+      <span class="error1" style="display: none;">
+        <i class="error-log fa fa-exclamation-triangle"></i>
+      </span>
+    </div>
+
+    <!-- End Area in Your Database Field -->
+    <!-- Begin What's Your Address Field -->
+    <div class="hs_address">
+
+      <label for="address">Address*</label>
+
+      <input id="address" name="address" required="required" type="text"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please enter your shop address">
+      <span class="error1" style="display: none;">
+        <i class="error-log fa fa-exclamation-triangle"></i>
+      </span>
+    </div>
+    <!-- End What's Your Address Field -->
+    <!-- Begin What's Your City Field -->
+    <div class="hs_city">
+
+      <label for="city">City*</label>
+
+      <input id="city" name="city" required="required" type="text"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please enter your city name">
+      <span class="error1" style="display: none;">
+        <i class="error-log fa fa-exclamation-triangle"></i>
+      </span>
+    </div>
+    <!-- End What's Your City Field -->
+    <!-- Begin What's Your State Field -->
+    <div class="hs_state">
+
+      <label for="state">State*</label>
+
+      <input id="state" name="state" required="required" type="text"
+        value="" placeholder="" data-rule-required="true" data-msg-required="Please enter your state name">
+      <span class="error1" style="display: none;">
+        <i class="error-log fa fa-exclamation-triangle"></i>
+      </span>
+    </div>
+    <!-- End What's Your City Field -->
+
+      <input type="button" data-page="2" name="previous" class="previous action-button" value="Previous" />
+      <input type="button" data-page="2" name="next" class="next action-button" value="Next" />
+      <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><a href="#"
+        class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a></div>
+    </fieldset>
+    
+
+    <!-- License Information FIELD SET -->
+    <fieldset>
+      <h2 class="fs-title">License Information</h2>
+      <h3 class="fs-subtitle">Provide us your license number and upload the documents asked</h3>
+
+      <!-- Begin Drug License Number in Your Database Field -->
+      <div class="hs_dlno">
+        <label for="dln_no">Drug License Number*</label>
+        <input id="dln_no" class="form-text hs-input" name="dln_no" required="required" size="60" maxlength="128" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Drug License Number in Your Database Field -->
+
+      <!-- Begin Upload for Drug License Number in Your Database Field -->
+      <div class="hs_uploaddlno">
+        <label for="upload_dl">Upload Drug License*</label>
+        <input id="upload_dl" class="form-text hs-input" name="upload_dl" required="required" type="file" value="" placeholder="" data-rule-required="true" data-msg-required="Please upload the required file">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Upload for Drug License Number in Your Database Field -->
+
+      <!-- Begin Tin Number in Your Database Field -->
+      <div class="hs_tlno">
+        <label for="tln_no">Tin License Number*</label>
+        <input id="tln_no" class="form-text hs-input" name="tln_no" required="required" size="60" maxlength="128" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Tin License Number in Your Database Field -->
+
+      <!-- Begin Upload for TIN Number in Your Database Field -->
+      <div class="hs_uploadtlno">
+        <label for="upload_tl">Upload TIN Document*</label>
+        <input id="upload_tl" class="form-text hs-input" name="upload_tl" required="required" type="file" value="" placeholder="" data-rule-required="true" data-msg-required="Please upload the required file">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Upload for TIN Number in Your Database Field -->
+
+      <!-- Begin ESTD Number in Your Database Field -->
+      <div class="hs_estdno">
+        <label for="estd_no">ESTD License Number*</label>
+        <input id="estd_no" class="form-text hs-input" name="estd_no" required="required" size="60" maxlength="128" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Drug License Number in Your Database Field -->
+
+      <!-- Begin Upload for ESTD Number in Your Database Field -->
+      <div class="hs_uploadestdno">
+        <label for="upload_estd">Upload ESTD Document*</label>
+        <input id="upload_estd" class="form-text hs-input" name="upload_estd" required="required" type="file" value="" placeholder="" data-rule-required="true" data-msg-required="Please upload the required file">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Upload for ESTD Number in Your Database Field -->
+
+      <input type="button" data-page="3" name="previous" class="previous action-button" value="Previous" />
+      <input type="button" data-page="3" name="next" class="next action-button" value="Next" />
+      <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><a href="#"
+        class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a></div>
+    </fieldset>
+
+
+
+    <!-- Contact Informatio FIELD SET -->
+    <fieldset>
+      <h2 class="fs-title">Contact Person Details</h2>
+      <h3 class="fs-subtitle">Provide details for point of contact to us</h3>
+
+      <!-- Begin What's Contact Person Name Field -->
+      <div class="hs_cpname">
+        <label for="contact_person_name">Contact Person Name*</label>
+        <input id="contact_person_name" name="contact_person_name" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Please include contact person's name">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End What's Contact Person Name Field -->
+
+      <!-- Begin Contact Person Mobile Number in Your Database Field -->
+      <div class="hs_cpmobno">
+        <label for="contact_person_mobile">Contact Person Mobile Number*</label>
+        <input id="contact_person_mobile" class="form-text hs-input" name="contact_person_mobile" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
+        <span class="error1" style="display: none;">
+          <i class="error-log fa fa-exclamation-triangle"></i>
+        </span>
+      </div>
+      <!-- End Contact Person Mobile Number in Your Database Field -->
+      <input type="button" data-page="4" name="previous" class="previous action-button" value="Previous" />
+      <input id="submit" class="hs-button primary large action-button next" type="submit" value="Submit">
+      <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><a href="#"class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a></div>
+    </fieldset>
+</body>
+
+</html>
